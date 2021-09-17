@@ -32,16 +32,29 @@
   <hr/>
   {{htmlText}}<br/>
   <span v-html="htmlText"></span>
+  
   <hr/>
-
   <div v-bind:key="emp.id" v-for="emp in employees">
     <b>Id</b>: {{emp.id}},<br/>
     <b>Name</b>: {{emp.name}},<br/>
     <b>Salary</b>: {{emp.Salary}},<br/><br/><br/>
   </div>
 
+ 
+ 
+ 
+  <hr/>
+  <div v-bind:key="std.studentId" v-for="std in students"> 
+    <b>studentId :</b> {{std.studentId}},<br/>
+    <b>firstame :</b> {{std.firstname}},<br/>
+    <b>lastName :</b> {{std.lastName}},<br/>
+    <b>score :</b> {{std.score}},<br/><br/><br/>
+  </div>
 
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+
+
+
+<!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   </div>
 </template>
 
@@ -64,7 +77,8 @@ export default {
       htmlText: "<b>HTML TEXT</b>&nbsp:",
       counter: 0,
       isGreeting: true,
-      employees:[{"id":1,"name":"John","Salary":30000},{"id":2,"name":"Trump","Salary":10000},{"id":3,"name":"Peter","Salary":99000}]
+      employees:[{"id":1,"name":"John","Salary":30000},{"id":2,"name":"Trump","Salary":10000},{"id":3,"name":"Peter","Salary":99000}],
+      students:[{"studentId":624235055,"firstname": "Phongpol","lastName":"Nitiweroj","score":"100"},{"studentId":624235048,"firstname": "Warinthon","lastName":"Kongjan","score":"100"},{"studentId":624235054,"firstname":"Sofwan","lastName":"Jehmusa","score":"100"},{"studentId":624235052,"firstname": "wanasaree","lastName":"sahasantivarakul","score":"100"}]
     }
   },
   methods: {
