@@ -38,11 +38,19 @@
     <b>Id</b>: {{emp.id}},<br/>
     <b>Name</b>: {{emp.name}},<br/>
     <b>Salary</b>: {{emp.Salary}},<br/><br/><br/>
-  </div>
+    <b>Name</b>:<span v-bind:class="(emp.Salary>90000) ? 'high' : (emp.Salary>=30000) ? 'medium' : 'low' ">{{emp.name}}</span>,<br/> 
+    <b>Salary</b>:{{emp.Salary}},
+    <span  v-if="emp.Salary>90000">***</span>
+    <span  v-else-if="emp.Salary>=30000">**</span>
+    <span  v-else>*</span>
+
+
+    <br/><br/><br/> 
+
 
  
  
- 
+  </div>
   <hr/>
   <div v-bind:key="std.studentId" v-for="std in students"> 
     <b>studentId :</b> {{std.studentId}},<br/>
@@ -100,5 +108,14 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.high{
+  color: rgb(41, 6, 167);
+}
+.medium{
+  color: rgb(4, 68, 187);
+}
+.low{
+  color: rgb(9, 152, 247);
 }
 </style>
